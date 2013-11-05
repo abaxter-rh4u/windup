@@ -62,9 +62,9 @@ public class SwitchyardForgeController implements Reporter
 
             AddonId switchyardId = AddonId
                      .fromCoordinates("org.switchyard.forge:switchyard-forge-plugin,1.0.0-SNAPSHOT");
-            install(furnace, AddonId.fromCoordinates("org.jboss.forge.addon:parser-java,2.0.0-SNAPSHOT"));
-            install(furnace, AddonId.fromCoordinates("org.jboss.forge.addon:projects,2.0.0-SNAPSHOT"));
-            install(furnace, AddonId.fromCoordinates("org.jboss.forge.addon:maven,2.0.0-SNAPSHOT"));
+            install(furnace, AddonId.fromCoordinates("org.jboss.forge.addon:parser-java,2.0.0.Alpha12"));
+            install(furnace, AddonId.fromCoordinates("org.jboss.forge.addon:projects,2.0.0.Alpha12"));
+            install(furnace, AddonId.fromCoordinates("org.jboss.forge.addon:maven,2.0.0.Alpha12"));
             install(furnace, switchyardId);
 
             AddonRegistry registry = furnace.getAddonRegistry();

@@ -22,6 +22,9 @@ public class SwitchyardReporter implements Reporter {
 			LOG.info("Generating Switchyard compontents leveraging JBoss Forge.");
 			SwitchyardForgeController sfc = new SwitchyardForgeController();
 			sfc.process(archive, reportDirectory);
+			
+			
+			
 		}
 	}
 
