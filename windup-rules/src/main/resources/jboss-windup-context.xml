@@ -472,6 +472,7 @@
 				
 				<!-- jBPM 3 -->
 				<value>org.jbpm</value>
+				<value>org.drools</value>
 			</set>
 		</constructor-arg>
 	</bean>
