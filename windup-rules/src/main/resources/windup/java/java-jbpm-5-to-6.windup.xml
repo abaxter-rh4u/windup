@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:windup="http://www.jboss.org/schema/windup"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+           http://www.jboss.org/schema/windup http://www.jboss.org/schema/windup.xsd">
+
+  <windup:java-hints id="java-jbpm5to6-migration-hints">
+    <windup:java-hint source-type="TYPE" regex="org.drools.KnowledgeBase" hint="Deprecated. Replaced by org.kie.api.KieBase"/>
+    <windup:java-hint source-type="TYPE" regex="org.drools.runtime.StatefulKnowledgeSession" hint="Deprecated. Replaced by org.kie.api.runtime.KieSession"/>
+    <windup:java-hint source-type="TYPE" regex="org.drools.runtime.StatelessKnowledgeSession" hint="Deprecated. Replaced by org.kie.api.runtime.KieSession"/>
+    <windup:java-hint source-type="TYPE" regex="org.drools.persistence.jpa.JPAKnowledgeService" hint="Direct use of JPAKnowledgeService. Please use org.kie.api.runtime.manager.RuntimeManagerFactory and RuntimeEnvironment instead to create a RuntimeManager. From the RuntimeManager, get a RuntimeEngine which contains the KieSession and TaskService." />
+    <windup:java-hint source-type="METHOD" regex="org.drools.runtime.StatefulKnowledgeSession.dispose()" hint="KieSessionSession will now dispose automatically at a transaction boundary. Manually calling dispose is no longer required." />
+  </windup:java-hints>
+
+<!-- EXAMPLES: 
+
+	<windup:pipeline type="JAVA" id="java-extension-decorators">
+		<windup:java-classification regex="com.example.clz.ClzName$" description="Testing Extension Framework" />
+	</windup:pipeline>
+	
+	<windup:pipeline type="XML" id="xml-extension-decorators">
+		<windup:xpath-classification description="Windup Example" xpath="/windup:example">
+			<windup:namespace prefix="windup" uri="http://windup.com/example/namespace" />
+		</windup:xpath-classification>
+	</windup:pipeline>
+
+ -->
+ 
+</beans>	
+			
